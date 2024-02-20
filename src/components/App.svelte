@@ -2,10 +2,10 @@
   import { onMount } from "svelte";
   import * as d3 from "d3";
 
-  let data = [];
-  let keys = [];
-  let teams = [];
-  let values = [];
+  export let data = [];
+  export let keys = [];
+  export let teams = [];
+  export let values = [];
   let year = 1950;
   let interval;
   let playing = false;
@@ -85,7 +85,7 @@
   };
 
   onMount(() => {
-    d3.csv("data/DSC106_NBA.csv").then((csvData) => {
+    d3.csv("src/DSC106_NBA.csv").then((csvData) => {
       data = csvData;
       renderBarChart(year);
     });
